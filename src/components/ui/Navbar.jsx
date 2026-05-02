@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useLenisInstance } from "@/context/LenisContext";
 import { Button } from "./Button";
+import Image from "next/image";
 
 const links = [
   { label: "About", id: "about" },
@@ -80,7 +81,8 @@ export default function Navbar() {
             onClick={onLogoClick}
             className="font-display text-2xl font-extrabold text-accent focus-ring rounded-md"
           >
-            M.
+            {/* M. */}
+            <Image src="/images/logo.png" alt="logo" width={100} height={100} />
           </Link>
 
           <div className="hidden items-center gap-8 md:flex">
