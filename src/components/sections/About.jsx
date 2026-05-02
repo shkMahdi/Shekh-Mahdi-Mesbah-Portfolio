@@ -1,9 +1,9 @@
 import SectionWrapper from "@/components/ui/SectionWrapper";
 
 const stats = [
-  { label: "1+ years coding", value: "01" },
+  { label: "3+ years coding", value: "01" },
   { label: "6+ projects", value: "02" },
-  { label: "2 languages (C, JS)", value: "03" },
+  { label: "5+ languages (C, C++, JS, Python, Java)", value: "03" },
   { label: "∞ curiosity", value: "04" },
 ];
 

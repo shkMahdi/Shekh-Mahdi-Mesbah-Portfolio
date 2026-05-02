@@ -158,7 +158,7 @@ export default function Hero() {
             <div className="hero-image-inner relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-subtle bg-secondary shadow-[0_30px_80px_rgba(0,0,0,0.55)]">
               <div className="absolute inset-0 z-0 bg-gradient-to-br from-accent/20 to-accent-dark/10" />
               <Image
-                src="/images/profile.png"
+                src="/images/profile.jpg"
                 alt="Shekh Mahdi Mesbah"
                 fill
                 priority

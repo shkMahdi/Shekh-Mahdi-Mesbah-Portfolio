@@ -6,14 +6,14 @@ import SectionWrapper from "@/components/ui/SectionWrapper";
 const entries = [
   {
     title: "Higher Secondary School Certificate (HSC)",
-    institution: "Institution name",
+    institution: "The Buds Residential Model School and College",
     years: "2020",
     description:
       "Completed higher secondary studies with a focus on science and analytical thinking.",
   },
   {
     title: "B.Sc in Software Engineering",
-    institution: "University name",
+    institution: "Metropolitan University, Sylhet",
     years: "2023 — Present",
     extra: "Expected graduation: December 2026",
     description:

@@ -1,34 +1,48 @@
 export const projects = [
   {
     id: "project-1",
-    title: "Project Alpha",
-    tagline: "A modern web application",
-    thumbnail: "/images/projects/project-1.jpg",
-    stack: ["React", "Node.js", "MongoDB"],
+    title: "Keen Keeper",
+    tagline: "A friendship management and interaction tracking web app",
+    thumbnail: "/images/projects/keen-keeper.jpg",
+    stack: [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Context API",
+      "Recharts",
+      "React Router"
+    ],
     description:
-      "A full-stack web application with authentication, CRUD operations, and a clean dashboard UI. Built to explore modern React patterns and REST API design.",
-    liveUrl: "#",
-    githubUrl: "https://github.com/shkMahdi",
+      "Keen Keeper is a modern web application designed to help users maintain meaningful relationships by tracking their interactions with friends. Users can log calls, texts, and video calls, view interaction history in a timeline, and analyze their communication patterns through visual analytics like pie charts.",
+    liveUrl: "https://keepyourkeen.netlify.app/",
+    githubUrl: "https://github.com/shkMahdi/A7-Keen-Keeper",
     challenges:
-      "Handling async state management across nested components was the biggest challenge. Solved it with proper Context API usage and custom hooks.",
+      "Managing global state for interactions across multiple components and ensuring real-time updates in analytics and timelines was challenging. This was solved using the Context API and efficient state updates.",
     improvements:
-      "Plan to add real-time features using WebSockets and improve mobile responsiveness.",
+      "Future improvements include adding user authentication, relationship goals with reminders, exporting interaction data, and building a mobile-friendly version with enhanced UI/UX.",
     gradient: "from-emerald-500/30 via-cyan-500/20 to-slate-900",
   },
   {
     id: "project-2",
-    title: "Nebula Dashboard",
-    tagline: "Analytics with Firebase backend",
+    title: "DigiTools",
+    tagline: "A digital tools platform with React and Tailwind CSS",
     thumbnail: "/images/projects/project-2.jpg",
-    stack: ["React", "Firebase", "Tailwind CSS"],
+    stack: [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "DaisyUI",
+      "React Icons",
+      "JavaScript (ES6+)"
+    ],
     description:
-      "A responsive analytics dashboard with Firebase Auth, Firestore queries, and role-based views. Focused on fast filtering and accessible data visualization.",
-    liveUrl: "#",
-    githubUrl: "https://github.com/shkMahdi",
+      "DigiTools is your all-in-one platform for premium digital tools, AI-powered resources, and productivity software. Whether you're a creator, designer, or business professional, we've got everything you need to work smarter and faster. Access high‑quality templates, AI tools, stock assets, and design resources all in one place, so you can focus on what you do best.",
+    liveUrl: "https://digi-tools-and-more.netlify.app/",
+    githubUrl: "https://github.com/shkMahdi/A6-DigiTools-Platform",
     challenges:
-      "Optimizing Firestore reads while keeping filters snappy required composite indexes and careful query batching.",
+      "Implementing real‑time cart updates and smooth transitions on a dynamic product gallery while keeping the UI responsive across all screen sizes.",
     improvements:
-      "Add export to CSV, dark-mode charts, and server-side aggregation for heavier datasets.",
+      "Add user authentication, order history, product search/filtering, and export cart data as CSV or JSON for offline use.",
     gradient: "from-violet-500/30 via-fuchsia-500/20 to-slate-900",
   },
   {
