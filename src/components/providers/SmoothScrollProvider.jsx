@@ -11,7 +11,11 @@ export default function SmoothScrollProvider({ children }) {
     const instance = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
     });
+
+    // ✅ OPTIONAL (for global access like window.lenis)
+    window.lenis = instance;
 
     setLenis(instance);
 
@@ -19,15 +23,23 @@ export default function SmoothScrollProvider({ children }) {
       instance.raf(time);
       requestAnimationFrame(raf);
     }
+
     requestAnimationFrame(raf);
 
     return () => {
       instance.destroy();
       setLenis(null);
+
+      // cleanup
+      if (window.lenis === instance) {
+        delete window.lenis;
+      }
     };
   }, []);
 
   return (
-    <LenisContext.Provider value={lenis}>{children}</LenisContext.Provider>
+    <LenisContext.Provider value={lenis}>
+      {children}
+    </LenisContext.Provider>
   );
 }

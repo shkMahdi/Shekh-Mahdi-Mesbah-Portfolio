@@ -1,6 +1,7 @@
 import { Syne, Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 const displayFont = Syne({
   subsets: ["latin"],
@@ -42,7 +43,10 @@ export default function RootLayout({ children }) {
       className={`${displayFont.variable} ${bodyFont.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full bg-primary text-primary">
-        <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        <SmoothScrollProvider>
+          {children}
+          <ScrollToTop />
+        </SmoothScrollProvider>
       </body>
     </html>
   );
