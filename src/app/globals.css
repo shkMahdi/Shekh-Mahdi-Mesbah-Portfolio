@@ -1,26 +1,112 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-syne);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  .bg-primary {
+    background-color: #0a0a0a;
+  }
+  .bg-secondary {
+    background-color: #111111;
+  }
+  .text-primary {
+    color: #f0f0f0;
+  }
+  .text-muted {
+    color: #888888;
+  }
+  .text-accent {
+    color: #00ff87;
+  }
+  .bg-accent {
+    background-color: #00ff87;
+  }
+  .bg-accent-dark {
+    background-color: #00cc6a;
+  }
+  .border-subtle {
+    border-color: #1e1e1e;
+  }
+  .bg-subtle {
+    background-color: #1e1e1e;
+  }
+  .border-accent {
+    border-color: #00ff87;
+  }
+  .ring-accent {
+    --tw-ring-color: #00ff87;
+  }
+  .font-display {
+    font-family: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
   }
 }
 
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --text-primary: #f0f0f0;
+  --text-muted: #888888;
+  --accent: #00ff87;
+  --accent-dark: #00cc6a;
+  --border-subtle: #1e1e1e;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  color: var(--text-primary);
+  min-height: 100vh;
+  background: radial-gradient(ellipse at center, #111111 0%, #0a0a0a 65%);
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 40;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.15);
+  }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
+
+.focus-ring {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid #00ff87;
+  outline-offset: 3px;
 }
