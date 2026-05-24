@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
+import Image from "next/image";
 
 export default function ProjectDetailView({ project }) {
   return (
@@ -21,10 +22,17 @@ export default function ProjectDetailView({ project }) {
         </Link>
 
         <header className="mt-10">
-          <div
-            className={`mb-8 h-40 w-full rounded-2xl bg-gradient-to-br ${project.gradient} md:h-52`}
-            aria-hidden
-          />
+          <div className="relative mb-8 aspect-video w-full overflow-hidden rounded-2xl">
+            <Image
+              src={project.thumbnail}
+              alt={project.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 896px"
+              priority
+            />
+            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-primary to-transparent" />
+          </div>
           <h1 className="font-display text-4xl font-extrabold text-primary md:text-5xl lg:text-6xl">
             {project.title}
           </h1>
@@ -65,10 +73,10 @@ export default function ProjectDetailView({ project }) {
         </div>
 
         <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:items-center">
-          <Button href={project.liveUrl} variant="primary">
+          <Button href={project.liveUrl} variant="primary" target="_blank" rel="noopener noreferrer">
             Live Demo →
           </Button>
-          <Button href={project.githubUrl} variant="ghost">
+          <Button href={project.githubUrl} variant="ghost" target="_blank" rel="noopener noreferrer">
             GitHub Repo →
           </Button>
         </div>

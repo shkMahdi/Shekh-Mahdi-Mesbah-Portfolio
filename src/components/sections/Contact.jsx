@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Mail, Phone, Linkedin, Github } from "lucide-react";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import { Button } from "@/components/ui/Button";
@@ -19,7 +20,45 @@ const details = [
   { label: "GitHub: shkMahdi", href: "https://github.com/shkMahdi", Icon: Github },
 ];
 
+const FORMSPREE_URL = "https://formspree.io/f/mnjrzeez";
+
 export default function Contact() {
+  const [status, setStatus] = useState("idle"); // idle | loading | success | error
+  const [errorMsg, setErrorMsg] = useState("");
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setStatus("loading");
+    setErrorMsg("");
+
+    const form = e.target;
+    const data = {
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value,
+    };
+
+    try {
+      const res = await fetch(FORMSPREE_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        const json = await res.json();
+        setErrorMsg(json?.errors?.[0]?.message ?? "Something went wrong. Please try again.");
+        setStatus("error");
+      }
+    } catch {
+      setErrorMsg("Network error. Please check your connection and try again.");
+      setStatus("error");
+    }
+  }
+
   return (
     <SectionWrapper
       id="contact"
@@ -55,9 +94,8 @@ export default function Contact() {
 
           <form
             className="space-y-4 rounded-2xl border border-subtle bg-secondary/60 p-6 md:p-8"
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleSubmit}
           >
-            {/* TODO: connect to Formspree or EmailJS */}
             <div className="space-y-2">
               <label htmlFor="name" className="text-xs font-medium text-muted">
                 Name
@@ -66,6 +104,7 @@ export default function Contact() {
                 id="name"
                 name="name"
                 type="text"
+                required
                 autoComplete="name"
                 className="focus-ring w-full rounded-lg border border-subtle bg-secondary px-3 py-2.5 text-sm text-primary transition-colors duration-200 focus:border-accent"
               />
@@ -78,6 +117,7 @@ export default function Contact() {
                 id="email"
                 name="email"
                 type="email"
+                required
                 autoComplete="email"
                 className="focus-ring w-full rounded-lg border border-subtle bg-secondary px-3 py-2.5 text-sm text-primary transition-colors duration-200 focus:border-accent"
               />
@@ -90,12 +130,31 @@ export default function Contact() {
                 id="message"
                 name="message"
                 rows={5}
+                required
                 className="focus-ring w-full resize-y rounded-lg border border-subtle bg-secondary px-3 py-2.5 text-sm text-primary transition-colors duration-200 focus:border-accent"
               />
             </div>
+
+            {/* Feedback messages */}
+            {status === "success" && (
+              <p className="rounded-lg bg-accent/10 px-4 py-3 text-sm text-accent">
+                Message sent! I&apos;ll get back to you soon.
+              </p>
+            )}
+            {status === "error" && (
+              <p className="rounded-lg bg-red-500/10 px-4 py-3 text-sm text-red-400">
+                {errorMsg}
+              </p>
+            )}
+
             <div className="pt-2">
-              <Button type="submit" variant="primary" className="w-full">
-                Send message
+              <Button
+                type="submit"
+                variant="primary"
+                className="w-full"
+                disabled={status === "loading"}
+              >
+                {status === "loading" ? "Sending…" : "Send message"}
               </Button>
             </div>
           </form>

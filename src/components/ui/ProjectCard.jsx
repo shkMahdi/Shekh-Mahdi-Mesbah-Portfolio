@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function ProjectCard({ project, index }) {
   return (
@@ -23,10 +24,20 @@ export default function ProjectCard({ project, index }) {
         className="flex h-full flex-col overflow-hidden rounded-xl border border-subtle bg-secondary shadow-[0_24px_70px_rgba(0,0,0,0.45)]"
         whileHover={{ y: -6, borderColor: "rgba(0, 255, 135, 0.55)" }}
       >
-        <div
-          className={`relative aspect-video w-full bg-gradient-to-br ${project.gradient} opacity-90`}
+        {/* <div
+          className={`relative aspect-video w-full bg-linear-to-br ${project.gradient} opacity-90`}
           aria-hidden
-        />
+        /> */}
+        <div className="relative aspect-video w-full overflow-hidden">
+          <Image
+            src={project.thumbnail}
+            alt={project.title}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            loading="eager"
+          />
+        </div>
         <div className="flex flex-1 flex-col gap-4 p-5 md:p-6">
           <div className="flex flex-wrap gap-2">
             {project.stack.map((tech) => (

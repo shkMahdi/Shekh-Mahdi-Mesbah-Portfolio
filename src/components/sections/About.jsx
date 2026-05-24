@@ -1,4 +1,5 @@
 import SectionWrapper from "@/components/ui/SectionWrapper";
+import Link from "next/link";
 
 const stats = [
   { label: "3+ years coding", value: "01" },
@@ -23,19 +24,25 @@ export default function About() {
           </h2>
           <div className="mt-8 space-y-5 text-sm leading-relaxed text-muted md:text-base">
             <p>
-              I&apos;m Mahdi — a software engineering student and web developer
+              I&apos;m Mahdi - a software engineering student and web developer
               who found his calling in building things for the internet. My
               journey into programming started with curiosity and a single
               Google search, and it hasn&apos;t stopped since. I love the process
               of turning ideas into interactive, meaningful digital experiences.
             </p>
             <p>
-              Outside of code, I&apos;m someone who enjoys thinking through
-              problems — whether it&apos;s debugging a tricky function or
+              I&apos;m someone who enjoys thinking through
+              problems - whether it&apos;s debugging a tricky function or
               figuring out the best move in a game. I believe great software
               comes from a mix of technical skill and genuine care for the user
               experience. I&apos;m constantly learning, and I wouldn&apos;t have
               it any other way.
+            </p>
+            <p>
+              But code is only half my story. Outside of code, I&apos;m someone who&hellip;{" "}
+              <Link href="/about" className="text-accent underline-offset-2 hover:underline">
+                see more
+              </Link>
             </p>
           </div>
         </div>

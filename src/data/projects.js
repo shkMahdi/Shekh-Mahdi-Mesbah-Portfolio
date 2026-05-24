@@ -1,9 +1,61 @@
 export const projects = [
   {
     id: "project-1",
+    title: "StudyNook",
+    tagline: "A full-stack room booking platform for listing, discovering, and reserving study rooms by the hour",
+    thumbnail: "/images/study-nook-mockup.png",
+    stack: [
+      "Next.js 16",
+      "React 19",
+      "Tailwind CSS v4",
+      "DaisyUI v5",
+      "Better Auth",
+      "MongoDB",
+      "React Hook Form",
+      "React Hot Toast",
+    ],
+    description:
+      "StudyNook is a full-stack room booking platform where users can list, discover, and reserve study rooms by the hour. It features browsing rooms with details like capacity, floor, hourly rate, and amenities, authenticated room listings with photos and tags, hourly booking with automatic cost calculation, booking management, and secure authentication via email/password and Google OAuth.",
+    liveUrl: "https://study-nook-ivory.vercel.app/",
+    githubUrl: "https://github.com/shkMahdi/A9-Study-Nook",
+    challenges:
+      "Implementing JWT-based session handling for protected routes alongside Better Auth's Google OAuth flow required careful coordination. Managing real-time booking state and preventing double-bookings while keeping the UI responsive was also a key challenge.",
+    improvements:
+      "Future improvements include a calendar view for availability, real-time notifications for booking confirmations, review and rating system for rooms, and an admin dashboard for platform management.",
+    gradient: "from-teal-500/30 via-cyan-500/20 to-slate-900",
+  },
+  {
+    id: "project-2",
+    title: "Skill Sphere",
+    tagline: "An online course browsing and discovery platform",
+    thumbnail: "/images/skill-sphere-mockup.png",
+    stack: [
+      "Next.js 16",
+      "React 19",
+      "Tailwind CSS v4",
+      "DaisyUI v5",
+      "Better Auth",
+      "MongoDB",
+      "React Hook Form",
+      "React Hot Toast",
+      "React Spring",
+      "Swiper"
+    ],
+    description:
+      "Skill Sphere is a modern online course browsing platform where users can explore a variety of courses, view detailed information, and manage their profiles. It features authentication with email/password and Google OAuth, animated UI components like a hero slider and course cards, and a fully responsive design for seamless use across devices.",
+    liveUrl: "https://skill-sphere-mu.vercel.app",
+    githubUrl: "https://github.com/shkMahdi/A8-Skill-Sphere",
+    challenges:
+      "Implementing secure authentication with Better Auth and integrating Google OAuth alongside email/password login was complex. Managing state across dynamic course data, animations, and user sessions while maintaining performance and responsiveness also posed challenges.",
+    improvements:
+      "Future improvements include adding course enrollment and progress tracking, user reviews and ratings, bookmarking/favorites, advanced filtering, and an admin dashboard for course management.",
+    gradient: "from-indigo-500/30 via-purple-500/20 to-slate-900",
+  },
+  {
+    id: "project-3",
     title: "Keen Keeper",
     tagline: "A friendship management and interaction tracking web app",
-    thumbnail: "/images/projects/keen-keeper.jpg",
+    thumbnail: "/images/keen-keeper-mockup.png",
     stack: [
       "React",
       "Vite",
@@ -23,10 +75,10 @@ export const projects = [
     gradient: "from-emerald-500/30 via-cyan-500/20 to-slate-900",
   },
   {
-    id: "project-2",
+    id: "project-4",
     title: "DigiTools",
     tagline: "A digital tools platform with React and Tailwind CSS",
-    thumbnail: "/images/projects/project-2.jpg",
+    thumbnail: "/images/digi-tools-mockup.png",
     stack: [
       "React",
       "Vite",
@@ -45,68 +97,4 @@ export const projects = [
       "Add user authentication, order history, product search/filtering, and export cart data as CSV or JSON for offline use.",
     gradient: "from-violet-500/30 via-fuchsia-500/20 to-slate-900",
   },
-  {
-    id: "project-3",
-    title: "Atlas Commerce",
-    tagline: "Next.js storefront prototype",
-    thumbnail: "/images/projects/project-3.jpg",
-    stack: ["Next.js", "MongoDB", "Stripe"],
-    description:
-      "A storefront-style app with server components for catalog pages, MongoDB for inventory, and a Stripe-inspired checkout flow (test mode).",
-    liveUrl: "#",
-    githubUrl: "https://github.com/shkMahdi",
-    challenges:
-      "Keeping cart state consistent between server-rendered pages and client interactions meant leaning on URL state and shallow routing.",
-    improvements:
-      "Integrate real payments, inventory webhooks, and image optimization for product galleries.",
-    gradient: "from-amber-500/30 via-orange-500/20 to-slate-900",
-  },
-  {
-    id: "project-4",
-    title: "Pixel Sketch Lab",
-    tagline: "Canvas playroom in vanilla JS",
-    thumbnail: "/images/projects/project-4.jpg",
-    stack: ["JavaScript", "HTML5 Canvas", "CSS"],
-    description:
-      "A browser-based drawing board with layers, brush sizes, and export to PNG—built without frameworks to deepen DOM and Canvas fundamentals.",
-    liveUrl: "#",
-    githubUrl: "https://github.com/shkMahdi",
-    challenges:
-      "Smoothing stroke input on high-DPI screens required scaling the backing store and syncing pointer events carefully.",
-    improvements:
-      "Add undo/redo stacks, custom palettes, and touch-friendly controls for tablets.",
-    gradient: "from-sky-500/30 via-blue-500/20 to-slate-900",
-  },
-  {
-    id: "project-5",
-    title: "Pulse Notes",
-    tagline: "Markdown notes with local-first sync",
-    thumbnail: "/images/projects/project-5.jpg",
-    stack: ["React", "IndexedDB", "Vite"],
-    description:
-      "A lightweight notes client with Markdown preview, fuzzy search, and offline persistence via IndexedDB wrappers.",
-    liveUrl: "#",
-    githubUrl: "https://github.com/shkMahdi",
-    challenges:
-      "Debounced saves colliding with rapid edits needed a simple queue to serialize writes reliably.",
-    improvements:
-      "Optional cloud backup, collaborative cursors, and mobile quick-capture.",
-    gradient: "from-rose-500/30 via-red-500/20 to-slate-900",
-  },
-  {
-    id: "project-6",
-    title: "Circuit CRM",
-    tagline: "Team pipeline in Next + Prisma",
-    thumbnail: "/images/projects/project-6.jpg",
-    stack: ["Next.js", "Prisma", "PostgreSQL"],
-    description:
-      "A CRM-style pipeline for tracking leads and tasks with typed Prisma models, server actions, and optimistic UI updates.",
-    liveUrl: "#",
-    githubUrl: "https://github.com/shkMahdi",
-    challenges:
-      "Modeling flexible pipeline stages without over-normalizing pushed me to balance JSON columns with relational integrity.",
-    improvements:
-      "Email ingest, calendar sync, and richer reporting with chart primitives.",
-    gradient: "from-lime-500/30 via-green-500/20 to-slate-900",
-  },
-];
+]
