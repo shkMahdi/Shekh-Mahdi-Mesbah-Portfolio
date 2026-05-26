@@ -82,7 +82,7 @@ export default function Navbar() {
             className="font-display text-2xl font-extrabold text-accent focus-ring rounded-md"
           >
             {/* M. */}
-            <Image src="/images/logo.png" alt="logo" width={100} height={100} />
+            <Image src="/images/logo.png" alt="logo" width={100} height={100} style={{ height: "auto" }} />
           </Link>
 
           <div className="hidden items-center gap-8 md:flex">

@@ -1,5 +1,6 @@
 export const skills = {
-  Languages: ["HTML", "CSS", "JavaScript", "C", "C++", "SQL", "Python", "Java"],
-  Frameworks: ["React.js", "Next.js", "Tailwind CSS"],
-  "Databases & Tools": ["MongoDB", "Git", "Figma", "Notion", "VS Code", "IntelliJ IDEA", "Sublime Text", "Cursor"],
+  Languages: ["JavaScript (ES6+)", "C", "C++", "Python", "Java"],
+  Frontend: ["HTML5", "CSS3", "React.js", "Next.js", "Tailwind CSS"],
+  Backend: ["Node.js", "Express.js", "MongoDB Atlas", "REST API", "JWT"],
+  "Tools & Platforms": ["Git", "GitHub", "VS Code", "Notion", "Figma", "Vite", "Netlify", "Vercel"],
 };
