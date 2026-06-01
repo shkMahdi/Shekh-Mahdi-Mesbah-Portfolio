@@ -79,7 +79,7 @@ const sections = [
       <>
         <p>
           I love sports, especially football. I see it as a combination of a lot of things:
-          art, fitness, perseverance, healthy competitiveness, and of course, real health benefits are there. 
+          art, finesse, perseverance, healthy competitiveness, and of course, real health benefits are there. 
           I believe humans are innately competitive. They want to prove themselves, to announce
           themselves as the best. Wars, perhaps, are an expression of that drive. I reckon
           sports are a scaled-down version of war - a civilised arena where people can
