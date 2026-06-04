@@ -35,9 +35,9 @@ const ScrollToTop = () => {
           transition={{ duration: 0.3 }}
           whileHover={{ scale: 1.15 }}
           whileTap={{ scale: 0.95 }}
-          className="fixed bottom-6 right-6 z-50 bg-[#244D3F] text-white p-4 rounded-full shadow-xl"
+          className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-subtle bg-secondary/80 text-accent shadow-2xl backdrop-blur transition-all duration-300 hover:border-accent/60 hover:bg-secondary/90"
         >
-          <FaArrowUp />
+          <FaArrowUp className="h-5 w-5" />
         </motion.button>
       )}
     </AnimatePresence>
