@@ -73,17 +73,18 @@ export default function Navbar() {
         transition={{ duration: 0.35 }}
       >
         <nav
-          className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-6"
+          className="mx-auto flex w-full items-center justify-between px-4 py-4 md:px-6"
           aria-label="Primary"
         >
-          <Link
-            href="/"
-            onClick={onLogoClick}
-            className="font-display text-2xl font-extrabold text-accent focus-ring rounded-md"
-          >
-            {/* M. */}
-            <Image src="/images/logo.png" alt="logo" width={100} height={100} style={{ height: "auto" }} />
-          </Link>
+          <div className="flex flex-1 items-center">
+            <Link
+              href="/"
+              onClick={onLogoClick}
+              className="font-display text-2xl font-extrabold text-accent focus-ring rounded-md"
+            >
+              <Image src="/images/logo.png" alt="logo" width={100} height={100} style={{ height: "auto" }} />
+            </Link>
+          </div>
 
           <div className="hidden items-center gap-8 md:flex">
             {links.map((l) => {
@@ -100,26 +101,29 @@ export default function Navbar() {
                 </Link>
               );
             })}
+          </div>
+
+          <div className="flex flex-1 items-center justify-end gap-4">
             <Button
               href="/#contact"
               variant="primary"
-              className="!py-2 !text-xs md:!text-sm"
+              className="hidden !py-2 !text-xs md:flex md:!text-sm"
               onClick={(e) => onSectionNav(e, "#contact")}
             >
               Hire Me
             </Button>
-          </div>
 
-          <button
-            type="button"
-            className="focus-ring inline-flex rounded-md p-2 text-primary md:hidden"
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            onClick={() => setOpen((v) => !v)}
-          >
-            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            <span className="sr-only">Toggle menu</span>
-          </button>
+            <button
+              type="button"
+              className="focus-ring inline-flex rounded-md p-2 text-primary md:hidden"
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+              onClick={() => setOpen((v) => !v)}
+            >
+              {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              <span className="sr-only">Toggle menu</span>
+            </button>
+          </div>
         </nav>
       </motion.header>
 
