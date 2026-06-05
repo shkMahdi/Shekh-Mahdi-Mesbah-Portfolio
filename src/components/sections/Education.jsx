@@ -5,11 +5,12 @@ import SectionWrapper from "@/components/ui/SectionWrapper";
 
 const entries = [
   {
-    title: "Secondary School Certificate (SSC)",
-    institution: "The Buds Residential Model School & College",
-    years: "2018",
-    department: "Science",
-    grade: "GPA: 5.00 / 5.00",
+    title: "B.Sc in Software Engineering",
+    institution: "Metropolitan University, Sylhet",
+    years: "2023 — Present",
+    extra: "Expected graduation: December 2026",
+    department: "Software Engineering",
+    grade: "CGPA: 3.84 / 4.00 (up to 8th semester)",
   },
   {
     title: "Higher Secondary School Certificate (HSC)",
@@ -19,12 +20,11 @@ const entries = [
     grade: "GPA: 5.00 / 5.00",
   },
   {
-    title: "B.Sc in Software Engineering",
-    institution: "Metropolitan University, Sylhet",
-    years: "2023 — Present",
-    extra: "Expected graduation: December 2026",
-    department: "Software Engineering",
-    grade: "CGPA: 3.84 / 4.00 (up to 8th semester)",
+    title: "Secondary School Certificate (SSC)",
+    institution: "The Buds Residential Model School & College",
+    years: "2018",
+    department: "Science",
+    grade: "GPA: 5.00 / 5.00",
   },
 ];
 
