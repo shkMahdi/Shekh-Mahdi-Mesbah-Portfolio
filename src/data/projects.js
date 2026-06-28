@@ -1,5 +1,34 @@
 export const projects = [
   {
+    id: "project-0",
+    title: "DonorNet",
+    tagline: "A full-stack blood donation platform connecting verified donors with hospitals and patients in real-time",
+    thumbnail: "/images/donor-net-mockup.png",
+    stack: [
+      "Next.js 15",
+      "React 19",
+      "Tailwind CSS",
+      "HeroUI",
+      "Better Auth",
+      "MongoDB",
+      "Express.js",
+      "Stripe",
+      "React Hook Form",
+      "React Hot Toast",
+    ],
+    description:
+      "DonorNet is a life-saving blood donation platform that connects donors with patients in critical need. It features role-based dashboards (admin, volunteer, donor) for managing blood requests, location-based donor search by district and upazila, real-time request status tracking (pending, in progress, completed), secure authentication via email/password and Google OAuth, CRUD operations for managing donation requests, and integrated Stripe payment system for transparent platform funding with live donation tracking.",
+    liveUrl: "https://your-donor-net-url.vercel.app/",
+    githubUrl: "https://github.com/shkMahdi/DonerNet",
+    server: "https://github.com/shkMahdi/DonorNet-Server",
+    challenges:
+      "Implementing role-based access control across three user types (admin, volunteer, donor) with different permission levels required careful middleware design. Coordinating JWT-based authentication with Better Auth while maintaining secure session management across protected routes was complex. Managing real-time donation request workflows and preventing duplicate donor assignments while keeping the UI responsive presented significant state management challenges.",
+    improvements:
+      "Future improvements include push notifications for urgent blood requests, SMS alerts for nearby donors when matching blood types are needed, a donor availability calendar system, geolocation-based donor matching for faster response times, blood donation history and badges for frequent donors, and hospital verification system with partnership management.",
+    gradient: "from-red-500/30 via-rose-500/20 to-slate-900",
+  },
+
+  {
     id: "project-1",
     title: "StudyNook",
     tagline: "A full-stack room booking platform for listing, discovering, and reserving study rooms by the hour",

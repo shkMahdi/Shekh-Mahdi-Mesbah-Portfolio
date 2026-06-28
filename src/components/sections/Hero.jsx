@@ -33,7 +33,7 @@ const social = [
     href: "https://www.linkedin.com/in/shekh-mahdi-mesbah",
     Icon: Linkedin,
   },
-  { label: "Twitter", href: "https://twitter.com", Icon: XIcon },
+  // { label: "Twitter", href: "https://twitter.com", Icon: XIcon },
   { label: "Email", href: "mailto:mahdisheikh1624@gmail.com", Icon: Mail },
 ];
 

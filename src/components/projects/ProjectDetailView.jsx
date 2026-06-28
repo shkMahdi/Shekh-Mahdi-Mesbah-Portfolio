@@ -31,7 +31,7 @@ export default function ProjectDetailView({ project }) {
               sizes="(max-width: 768px) 100vw, 896px"
               priority
             />
-            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-primary to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-primary to-transparent" />
           </div>
           <h1 className="font-display text-4xl font-extrabold text-primary md:text-5xl lg:text-6xl">
             {project.title}
@@ -79,6 +79,11 @@ export default function ProjectDetailView({ project }) {
           <Button href={project.githubUrl} variant="ghost" target="_blank" rel="noopener noreferrer">
             GitHub Repo →
           </Button>
+          {
+           project.server && (<Button href={project.server} variant="ghost" target="_blank" rel="noopener noreferrer">
+              Sever Repo →
+            </Button>)
+          }
         </div>
       </div>
     </motion.div>
