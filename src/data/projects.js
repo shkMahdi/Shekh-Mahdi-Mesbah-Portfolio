@@ -18,7 +18,7 @@ export const projects = [
     ],
     description:
       "DonorNet is a life-saving blood donation platform that connects donors with patients in critical need. It features role-based dashboards (admin, volunteer, donor) for managing blood requests, location-based donor search by district and upazila, real-time request status tracking (pending, in progress, completed), secure authentication via email/password and Google OAuth, CRUD operations for managing donation requests, and integrated Stripe payment system for transparent platform funding with live donation tracking.",
-    liveUrl: "https://your-donor-net-url.vercel.app/",
+    liveUrl: "https://donor-net-connect.vercel.app/",
     githubUrl: "https://github.com/shkMahdi/DonerNet",
     server: "https://github.com/shkMahdi/DonorNet-Server",
     challenges:
